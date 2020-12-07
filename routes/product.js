@@ -4,16 +4,9 @@ const product=require('../models/product')
 const authMeddleware=require('../helpers/authMiddleware')
 const { body, validationResult } = require('express-validator');
 
-router.post('/',authMeddleware,
-[
-    body("url", "url must not empty").notEmpty,
-    body("name", "Name must contain only alphabetic").isAlpha(),
-    body("category", "please enter a valid Eamail").notEmpty,
-    body("amount", "password length allowed is 5 characters").isNumeric(),
-    body("price", "phone must contain only number").isNumeric(),
-  ],
-(req,res)=>{
-    if(req.client.role !=="admin"){
+router.post('/',authMeddleware,(req,res)=>{
+    
+    if(req.client.role !="admin"){
         return res.json('you are not authorized to add a new product')
     }
     

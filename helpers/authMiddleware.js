@@ -1,5 +1,4 @@
 
-
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const authMiddleware = (req, res, next) => {
@@ -15,9 +14,11 @@ const authMiddleware = (req, res, next) => {
                     message: "Failed to authenticate token.",
                 });
             }
+            
             req.client = { clientId: payload.clientId, role: payload.role };
-            next();
+            
         
         })
+        next();
     }
 module.exports = authMiddleware;
