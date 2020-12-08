@@ -1,8 +1,8 @@
 const mongoose=require('mongoose')
 
 const clientSchema= mongoose.Schema({
-    firtsName:String,
-    lastName:String,
+    firstname:String,
+    lastname:String,
     email:String,
     password:String,
     phone:String,
