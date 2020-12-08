@@ -18,7 +18,7 @@ export default function Login() {
             </div>
             < div className='row my-4'>
             <div className="col-md-2">Password</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="Password" style={{width:'100%'}} onChange={handle}></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="password" name="Password" style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             <div className='row my-4'>
              <div className='col-md-2'></div>

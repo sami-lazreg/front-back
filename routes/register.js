@@ -9,8 +9,8 @@ require('dotenv').config()
 router.post(
   "/",
   [
-    body("firtsName", "firstName must containe only alphabetic").isAlpha(),
-    body("lastName", "lastName must contain only alphabetic").isAlpha(),
+    body("firstname", "firstName must containe only alphabetic").isAlpha(),
+    body("lastname", "lastName must contain only alphabetic").isAlpha(),
     body("email", "please enter a valid Eamail").isEmail(),
     body("password", "password length allowed is 5 characters").isLength({
       min: 5,
