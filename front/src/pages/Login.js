@@ -1,9 +1,9 @@
 import React from 'react';
 import {useState} from 'react'
-import {useDispatch,useSelector} from 'react-redux'
+import {useDispatch,useSelector,useEffect} from 'react-redux'
 import {loginUser} from '../actions/authActions'
 import {Link} from 'react-router-dom'
-export default function Login() {
+export default function Login({history}) {
     const auth=useSelector(state=>state.authReducer)
     
     const [info,setInfo]=useState({
@@ -18,6 +18,13 @@ export default function Login() {
         e.preventDefault()
         dispatch(loginUser(info))
     }
+    useEffect(
+        ()=>{
+            if(auth.role=='admin'){
+                history.push('/adminPage')
+            }
+        },[auth.role]
+    )
     return (
         <div className='container register'>
             <form onSubmit={registerNow}>
