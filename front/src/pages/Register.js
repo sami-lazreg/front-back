@@ -1,9 +1,10 @@
 import React from 'react';
 import {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {registerUser} from '../actions/authActions'
 
 export default function Register() {
+    const auth=useSelector(state=>state.authReducer)
     const [info,setInfo]=useState({
         firstname:"",
         lastname:"",
@@ -51,6 +52,7 @@ export default function Register() {
              <div className='col-md-5'> <button type='submit' style={{margin:"auto"}}>Register</button></div>
             </div>
            </div>
+    <div><h6 style={{color:'red'}}>{!auth.errors? null:auth.errors}</h6></div>
             </form>
         </div>
     )

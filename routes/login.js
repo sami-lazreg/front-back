@@ -22,12 +22,12 @@ router.post("/",
     client.find({email:req.body.email})
       .then((user)=>{
           if(!user.length){
-             return  res.status(401).json([{msg:"please register befor"}])
+             return  res.status(401).json([{msg:"please register before"}])
           }
           bcrypt.compare(req.body.password,user[0].password)
           .then((result)=>{
               if(!result){
-                 return res.json([{msg:"please enter your correct password"}])
+                 return res.status(400).json([{msg:"please enter a valid password"}])
               }
 
               let paylode={
@@ -38,7 +38,7 @@ router.post("/",
                 if (err){
                     throw err
                 }
-                res.send({token:token})
+                res.send({token:token,role:user[0].role})
                 
             })
 
