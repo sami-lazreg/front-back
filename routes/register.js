@@ -11,7 +11,7 @@ router.post(
   [
     body("firstname", "firstName must containe only alphabetic").isAlpha(),
     body("lastname", "lastName must contain only alphabetic").isAlpha(),
-    body("email", "please enter a valid Eamail").isEmail(),
+    body("email", "please enter a valid Email").isEmail(),
     body("password", "password length allowed is 5 characters").isLength({
       min: 5,
     }),
@@ -52,7 +52,7 @@ router.post(
             if (err){
                 throw err
             }
-            res.send({token:token})
+            res.send({token:token,role:"client"})
             
         })
         
