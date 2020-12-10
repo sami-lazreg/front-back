@@ -1,6 +1,6 @@
-import React from 'react';
+import React ,{useEffect}from 'react';
 import {useState} from 'react'
-import {useDispatch,useSelector,useEffect} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 import {loginUser} from '../actions/authActions'
 import {Link} from 'react-router-dom'
 export default function Login({history}) {

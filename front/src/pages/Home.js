@@ -1,9 +1,12 @@
 import React from 'react'
 
+
 const Home = () => {
     return (
         <div>
             
+            
+            <h1>helloo from home page</h1>
         </div>
     )
 }

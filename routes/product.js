@@ -4,15 +4,12 @@ const product=require('../models/product')
 const authMeddleware=require('../helpers/authMiddleware')
 const { body, validationResult } = require('express-validator');
 
-router.post('/',authMeddleware,(req,res)=>{
+router.post('/',(req,res)=>{
     
-    if(req.client.role !="admin"){
-        return res.json('you are not authorized to add a new product')
-    }
     
     let newProduct = new product(req.body)
     newProduct.save()
-    res.send(newProduct)
+    res.status(200).json(newProduct)
 })
 
 router.get('/',(req,res)=>{

@@ -1,12 +1,21 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 const NavBar = () => {
+    const auth=useSelector(state=>state.authReducer)
     return (
+        
         <div>
-            <Link to="/">Go Home</Link>
-            <Link to="/Login">Login</Link>
-            
+            {!auth.role?
+            <div>
+            <Link to="/">Home</Link>
+            <Link to="/Login">connection</Link> 
+            </div>
+            :
+            <div>
+            <Link to="/Login">déconnection</Link> 
+            </div>}
             
         </div>
     )
