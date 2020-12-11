@@ -21,13 +21,7 @@ export default function Login({history}) {
         e.preventDefault()
         dispatch(loginUser(info))
     }
-    useEffect(
-        ()=>{
-            if(auth.role=='admin'){
-                history.push('/adminPage')
-            }
-        },[auth.role]
-    )
+    
     return (
         <div className='container register'>
             <form onSubmit={registerNow}>
