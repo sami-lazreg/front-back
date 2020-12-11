@@ -7,16 +7,13 @@ const NavBar = () => {
     return (
         
         <div>
-            {!auth.role?
-            <div>
             <Link to="/">Home</Link>
             <Link to="/Login">connection</Link>
-            <Link to="/Products">Products</Link>
-            </div>
-            :
-            <div>
-            <Link to="/Login">déconnection</Link> 
-            </div>}
+            <Link to="/phone">phone</Link>
+            <Link to="/pc">pc</Link>
+            <Link to="/electromenager">electromenager</Link>
+
+           
             
         </div>
     )
