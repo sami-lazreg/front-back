@@ -10,7 +10,8 @@ const NavBar = () => {
             {!auth.role?
             <div>
             <Link to="/">Home</Link>
-            <Link to="/Login">connection</Link> 
+            <Link to="/Login">connection</Link>
+            <Link to="/Products">Products</Link>
             </div>
             :
             <div>

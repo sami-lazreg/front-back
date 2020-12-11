@@ -1,6 +1,7 @@
 import Register from './pages/Register'
 import Home from "./pages/Home"
 import Login from './pages/Login'
+import Products from './pages/Products'
 import NavBar from "./pages/navBar"
 import{BrowserRouter as Router,Route, Switch} from 'react-router-dom'
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
        <Route exact path="/" component={Home}/>
        <Route path="/Register" component={Register}/>
        <Route path="/Login" component={Login}/>
+       <Route path="/Products" component={Products}/>
        <PrivateRoute path="/adminPage" component={adminPage}/>
      </Switch>
      </Router>
