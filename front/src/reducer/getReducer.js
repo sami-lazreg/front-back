@@ -9,7 +9,7 @@ let initstate=[]
 export default function getReducer(state=initstate,action) {
         switch(action.type){
         case GET_PRODUCT_SUCCESS:
-            return [ ...state,action.payload ];
+            return action.payload;
           case GET_PRODUCT_FAIL:
             return [...state,'failed to get product']
           default:

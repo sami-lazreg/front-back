@@ -1,8 +1,7 @@
-<<<<<<< Updated upstream
+
 import React ,{useEffect}from 'react';
-=======
-import React, {useEffect}  from 'react';
->>>>>>> Stashed changes
+
+
 import {useState} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {loginUser} from '../actions/authActions'

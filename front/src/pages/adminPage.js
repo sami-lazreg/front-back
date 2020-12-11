@@ -14,12 +14,19 @@ export default function () {
         price:""
     })
     const handle=(e)=>{
-        setInfo({...info,[e.target.name]:e.target.value})
+        setInfo({...info,[e.target.name]:e.target.value.trim()})
     }
     const dispatch=useDispatch()
     const addNewProduct=e=>{
         e.preventDefault()
         dispatch(addAction(info))
+        setInfo({
+        url:"",
+        name:"",
+        category:"",
+        amount:"",
+        price:""
+        })
     }
 
     return (
@@ -30,23 +37,23 @@ export default function () {
             </div>
             <div className='row my-4'>
             <div className="col-md-2 ">url</div>
-            <div className='col-md-5 col-xs-9'><input type ="url" name="url" style={{width:'100%'}} onChange={handle}></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="url" name="url" value={info.url} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             < div className='row my-4'>
             <div className="col-md-2">name</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="name" style={{width:'100%'}} onChange={handle} ></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="text" name="name" value={info.name} style={{width:'100%'}} onChange={handle} ></input></div>
             </div>
             < div className='row my-4'>
             <div className="col-md-2">category</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="category" style={{width:'100%'}} onChange={handle}></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="text" name="category" value={info.category} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             < div className='row my-4'>
             <div className="col-md-2">amount</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="amount" style={{width:'100%'}} onChange={handle}></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="text" name="amount" value={info.amount} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             < div className='row my-4'>
             <div className="col-md-2">price</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="price" style={{width:'100%'}} onChange={handle}></input></div>
+            <div className='col-md-5 col-xs-9'><input type ="text" name="price" value={info.price} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             
             <div>
