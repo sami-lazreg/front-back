@@ -10,7 +10,7 @@ const PrivateRoute=({component:Component,...rest}) =>{
         <div>
                 <Route {...rest}
                    render={props=>
-                    auth.role=='admin'? <Component {...props}/>:<Redirect to='/home'/>
+                    auth.role=='admin'? <Component {...props}/>:<Redirect to='/'/>
                    }
                    />
         </div>
