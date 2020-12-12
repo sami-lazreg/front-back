@@ -10,7 +10,8 @@ export default function () {
         url:"",
         name:"",
         category:"",
-        amount:"",
+        description:"",
+        référence:"",
         price:""
     })
     const handle=(e)=>{
@@ -20,11 +21,12 @@ export default function () {
     const addNewProduct=e=>{
         e.preventDefault()
         dispatch(addAction(info))
-        setInfo({
+       setInfo({
         url:"",
         name:"",
         category:"",
-        amount:"",
+        description:"",
+        référence:"",
         price:""
         })
     }
@@ -48,14 +50,17 @@ export default function () {
             <div className='col-md-5 col-xs-9'><input type ="text" name="category" value={info.category} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             < div className='row my-4'>
-            <div className="col-md-2">amount</div>
-            <div className='col-md-5 col-xs-9'><input type ="text" name="amount" value={info.amount} style={{width:'100%'}} onChange={handle}></input></div>
+            <div className="col-md-2">description</div>
+            <div className='col-md-5 col-xs-9'><textarea type ="text" name="description" value={info.description} style={{width:'100%'}} onChange={handle}></textarea></div>
+            </div>
+            < div className='row my-4'>
+            <div className="col-md-2">référence</div>
+            <div className='col-md-5 col-xs-9'><input type ="text" name="référence" value={info.référence} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
             < div className='row my-4'>
             <div className="col-md-2">price</div>
             <div className='col-md-5 col-xs-9'><input type ="text" name="price" value={info.price} style={{width:'100%'}} onChange={handle}></input></div>
             </div>
-            
             <div>
             <div className='row my-4'>
              <div className='col-md-2'></div>

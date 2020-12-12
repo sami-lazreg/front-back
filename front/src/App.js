@@ -8,6 +8,8 @@ import './App.css'
 import PrivateRoute from './privateroute'
 import adminPage from './pages/adminPage'
 import Electromenager from './pages/Electromenager'
+import Refregirateur from './pages/Refregirateur'
+import Machine from './pages/Machine'
 import Pc from './pages/Pc'
 
 
@@ -21,6 +23,8 @@ function App() {
        <Route path="/Login" component={Login}/>
        <Route path="/phone" component={phone}/>
        <Route path="/electromenager" component={Electromenager}/>
+       <Route path='/Refregirateur' component={Refregirateur}/>
+       <Route path='/Machine' component={Machine}/>
        <Route path="/pc" component={Pc}/>
        <PrivateRoute path="/adminPage" component={adminPage}/>
      </Switch>
