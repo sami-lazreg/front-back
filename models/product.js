@@ -4,8 +4,9 @@ const productSchema=monngoose.Schema({
     url:String,
     name:String,
     category:String,
-    amount:Number,
-    price:Number
+    description:String,
+    référence:String,
+    price:String
 })
 
 

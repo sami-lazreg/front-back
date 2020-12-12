@@ -18,7 +18,7 @@ const NavBar = () => {
             :
             auth.role=="admin"? 
             <div>
-                <Link to="/adminPage">add product</Link>
+            <Link to="/adminPage">add product</Link>
             <Link to="/">Home</Link>
             <Link to="/Login">deconnection</Link>
             <Link to="/phone">phone</Link>
