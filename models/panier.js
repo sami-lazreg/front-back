@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const panierSchema = mongoose.Schema({
-  id: mongoose.ObjectId,
+  id: mongoose.Schema.Types.ObjectId,
   product:[
     {
       url:String,

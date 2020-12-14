@@ -8,6 +8,9 @@ app.use(express.json());
 app.use('/register',require("./routes/register"))
 app.use('/login',require('./routes/login'))
 app.use('/product',require('./routes/product'))
+app.use('/panier',require('./routes/panier'))
+
+
 
 
 
