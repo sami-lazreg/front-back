@@ -35,11 +35,12 @@ router.put('/',authMiddleware,(req,res)=>{
 router.delete('/',authMiddleware,(req,res)=>{
     
     panier
-    .update({
+    .findOneAndUpdate({
         _id:req.client.clientId
       }, {
-        $pull: { product: {id:req.body.id }}
-      })
+        $pull: { "product": {"id":req.body.id }}
+      },
+      {new:true})
     .then(el=>{
         console.log(el)
         res.send(el)
