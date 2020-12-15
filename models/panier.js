@@ -14,3 +14,7 @@ const panierSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model("panier", panierSchema);
+
+
+
+
