@@ -66,11 +66,15 @@ router.put('/updateProduct',authMiddleware,(req,res)=>{
 
 router.delete('/',authMiddleware,(req,res)=>{
     
+
+   
+
     panier.update(
             { },
             { $pull: { product: { _id:req.body.id } } },
             { multi: true }      
     )
+
     .then(el=>{
         res.status(200).send(el)
     })
