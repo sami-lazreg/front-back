@@ -16,8 +16,6 @@ router.post('/',authMiddleware,(req,res)=>{
             
             newp.save()
            return res.status(200).json(newp)
-        }else{
-            return res.status(404).json("5ghalet ye bhim")
         }
     })
   
@@ -33,6 +31,20 @@ router.put('/',authMiddleware,(req,res)=>{
         console.error(err.message);
         res.status(500).send([{msg:"server ERROR"}])
       })
+})
+router.delete('/',authMiddleware,(req,res)=>{
+    
+    panier
+    .update({
+        _id:req.client.clientId
+      }, {
+        $pull: { product: {id:req.body.id }}
+      })
+    .then(el=>{
+        console.log(el)
+        res.send(el)
+    })
+    
 })
     
 router.get('/',authMiddleware,(req,res)=>{
