@@ -47,3 +47,6 @@ li{
 .link{
   text-decoration: none;
 }
+.flex{
+  display:flex;
+}

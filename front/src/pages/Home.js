@@ -7,8 +7,10 @@ import OneProduct from './oneProduct';
 
 
 const Home = () => {
+    const state=useSelector(state=>state.getReducer)
+   
     const dispatch=useDispatch();
-        const state=useSelector(state=>state.getReducer)
+        
         useEffect(()=>{
             dispatch(getAction())
        },[]);
@@ -20,7 +22,7 @@ const Home = () => {
             
             
             <ul className=' product ' >
-            {state.map((el)=><OneProduct state={el}/>)}
+            {state.map((el,i)=> <div key={i}><OneProduct state={el} /></div>)}
             </ul>
             
         </div>
